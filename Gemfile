@@ -33,6 +33,9 @@ group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "capybara", "~> 2.13"
   gem "selenium-webdriver"
+  gem "factory_girl_rails"
+  gem "faker"
+  gem "rspec-rails", "~> 3.7"
   gem "sqlite3"
 end
 
@@ -42,4 +45,9 @@ group :development do
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console", ">= 3.3.0"
   gem "fog", "1.42"
+end
+group :test do
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'database_cleaner'
+  gem "simplecov", require: false
 end
