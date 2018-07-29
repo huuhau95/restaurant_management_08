@@ -7,7 +7,6 @@ class User < ApplicationRecord
   has_many :tables, through: :bookings
 
   mount_uploader :image, PictureUploader
-
   before_save :downcase_email
   attr_accessor :remember_token
   validates :name, presence: true,

@@ -18,4 +18,11 @@ class Booking < ApplicationRecord
     table_id.present?}
   scope :total_order, ->{count(:id)}
   scope :number_of_orders_by_status, ->{group(:status).count(:id)}
+  scope :ordered, -> {order created_at: :desc}
+  validates :time_start, presence: true
+  validates :time_end, presence: true
+  validates :name, presence: true
+  validates :email, presence: true
+  validates :address, presence: true
+  validates :phone, presence: true
 end
